@@ -1,6 +1,5 @@
 package com.hasan.stockalert.alerts;
 
-import com.hasan.stockalert.assets.AssetType;
 import com.hasan.stockalert.auth.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -25,10 +24,6 @@ public class Alert {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "asset_type")
-    private AssetType assetType;
 
     @Column(name = "asset_symbol")
     private String assetSymbol;

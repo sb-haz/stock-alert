@@ -23,9 +23,9 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/register").permitAll()
-                        .requestMatchers("/api/auth/login").permitAll()
-                        .requestMatchers("/api/assets/**").permitAll()
+//                        .requestMatchers("/api/auth/register").permitAll()
+//                        .requestMatchers("/api/auth/login").permitAll()
+                        .requestMatchers("/api/**").permitAll()
                         .requestMatchers("/error").permitAll()  // Allow error pages
                         .anyRequest().authenticated()
                 )
